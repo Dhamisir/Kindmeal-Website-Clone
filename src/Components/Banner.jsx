@@ -3,11 +3,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from 'axios';
 import { useRef } from "react";
+import LoadComponent from './Loading';
 
 export default function Banner() {
     const [random, setRandom] = useState({});
     const [loading, setLoading] = useState(true);
     const ref = useRef(null);
+    
     useEffect(() => {
         ref.current = setTimeout(getRandom, 5000)
         const cleanup = () => {
@@ -22,21 +24,6 @@ export default function Banner() {
         axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
             .then((res) => { console.log(res.data.meals[0]); setRandom(res.data.meals[0]); setLoading(false) })
             .catch((error) => { console.log(error) })
-    }
-
-    const LoadComponent = () => {
-        return (
-            <>
-                <Spinner
-                    mt="20px"
-                    thickness='4px'
-                    speed='0.65s'
-                    emptyColor='gray.200'
-                    color='blue.500'
-                    size='xl'
-                />
-            </>
-        )
     }
 
     const BannerComponent = () => {

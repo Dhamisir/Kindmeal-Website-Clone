@@ -1,4 +1,4 @@
-import { Box, Grid, Image, Text } from "@chakra-ui/react"
+import { Box, Button, Grid, Image, Text } from "@chakra-ui/react"
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react"
@@ -40,6 +40,7 @@ export default function FoodPage() {
                                     <Box key={ele.strCategoryThumb} boxShadow='base'>
                                         <Image w="100%" src={ele.strCategoryThumb} alt={ele.strCategory} />
                                         <Text>{ele.strCategory}</Text>
+                                        <Button colorScheme='red'>Get Free Coupon</Button>
                                     </Box>
                                 )
                             })
@@ -58,9 +59,10 @@ export default function FoodPage() {
                         {
                             data.map((ele) => {
                                 return (
-                                    <Box key={ele.strMealThumb} boxShadow='base'>
+                                    <Box p="10px" key={ele.strMealThumb} boxShadow='base'>
                                         <Image w="100%" src={ele.strMealThumb} alt={ele.strMeal} />
                                         <Text>{ele.strMeal}</Text>
+                                        <Button colorScheme='red'>Get Free Coupon</Button>
                                     </Box>
                                 )
                             })

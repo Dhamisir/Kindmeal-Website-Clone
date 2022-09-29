@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react'
 import Banner from '../Components/Banner'
+import HomeFeatures from '../Components/HomeFeatures';
 import {CategorySection, DiscoverSection, YummySection} from '../Components/HomeSection'
 export default function Home() {
     const [category,setCategory]=useState([]);
@@ -61,10 +62,11 @@ export default function Home() {
 
     return (
         <>
-            {/* <Banner/> */}
+            <Banner/>
             <CategorySection data={category}/>
             <YummySection data={yummy}/>
             <DiscoverSection data={discover}/>
+            <HomeFeatures/>
         </>
     )
 };

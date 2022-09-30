@@ -24,14 +24,14 @@ export default function MealPage() {
     const handleChange=(event)=>{
         console.log(event.target.value);
         let value=event.target.value;
-        if(value=="All")
+        if(value==="All")
         {
             setData(ref.current)
         }
         else
         {
             let filterData=ref.current.filter((ele)=>{
-                        return ele.strCategory==value;
+                        return ele.strCategory===value;
             });
             setData(filterData);
         }

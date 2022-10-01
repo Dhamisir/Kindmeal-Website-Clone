@@ -6,6 +6,7 @@ import Home from "./Home";
 import KindMoments from "./KindMoments";
 import MealPage from "./MealPage";
 import Signup from "./Signup";
+import Error from "./Error";
 
 export default function AllRoutes() {
     return (
@@ -16,6 +17,7 @@ export default function AllRoutes() {
             <Route path="/help" element={<Help />}>Help</Route>
             <Route path="/foodpage/:see" element={<FoodPage />}>FoodPage</Route>
             <Route path="/signup" element={<PrivateRoute><Signup /></PrivateRoute>}>Signup</Route>
+            <Route path="*" element={<Error />}>Error</Route>
         </Routes>
     )
 };

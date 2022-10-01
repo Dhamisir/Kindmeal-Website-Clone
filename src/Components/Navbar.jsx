@@ -1,4 +1,4 @@
-import { Grid, GridItem, Image, Button, Link, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Flex, Text, Box } from '@chakra-ui/react';
+import { Grid, GridItem, Image, Button, Link, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Flex, Text, Box, Avatar, WrapItem } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { FaTwitter } from "react-icons/fa"
@@ -82,7 +82,7 @@ export default function Navbar() {
                 <GridItem>
                     <Button colorScheme='blue' border="none" m="5px" bg="#214A83" color="white" p="5px 20px" pr="15px" borderRadius="5px" >Facebook</Button>
                     <Button colorScheme='grey' border="none" m="5px" bg="#555555" color="white" p="5px 20px" pr="15px" borderRadius="5px">Email</Button>
-                    {(token === null) ? <Signup /> : "WELCOME"}
+                    {(token === null) ? <Signup /> :<Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />}
                 </GridItem>
             </Grid>
 
